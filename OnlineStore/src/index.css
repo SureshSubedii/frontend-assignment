@@ -1,3 +1,6 @@
 @tailwind base;
 @tailwind components;
+  .sidebar-items{
+    @apply hover:cursor-pointer flex place-items-center rounded hover:bg-blue-500 p-1 sm:text-xs md:text-xl;
+  }
 @tailwind utilities;
