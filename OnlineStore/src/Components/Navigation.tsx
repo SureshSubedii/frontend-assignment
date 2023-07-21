@@ -7,11 +7,11 @@ function Navigation(): JSX.Element {
   return (
     <div className="bg-gradient-to-b from-gray-700 to-gray-500 text-white flex justify-evenly font-bold  w-full py-2">
      
-      <p className="sidebar-items " onClick={()=>navigate("/")}><FlutterDashIcon/> 
+      <p className="sidebar-items " onClick={()=>navigate("/dashboard")}><FlutterDashIcon/> 
       <span>Dashboard</span>
       </p>
 
-      <p className="sidebar-items" onClick={()=>navigate("/products")}>
+      <p className="sidebar-items" onClick={()=>navigate("/")}>
         <StoreIcon/>
         <span>Products</span>
       </p>
