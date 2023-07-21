@@ -1,6 +1,9 @@
 import Box from '@mui/material/Box';
 import Rating from '@mui/material/Rating';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCategory, setCount, setDescription, setImage, setPrice, setRate, setTitle } from '../StateManagement/ProductSlice';
+
 import { selectCategory, selectCount, selectDescription, selectImage, selectPrice, selectRate, selectTitle } from '../StateManagement/ProductSlice';
 function ProductDetails(): JSX.Element {
   const title = useSelector(selectTitle)
@@ -10,6 +13,23 @@ function ProductDetails(): JSX.Element {
   const price = useSelector(selectPrice)
   const rate = useSelector(selectRate);
   const count = useSelector(selectCount);
+
+  const dispatch=useDispatch()
+
+  useEffect(() => {
+    dispatch(setTitle(sessionStorage.getItem('title')??''))
+    dispatch(setDescription(sessionStorage.getItem('description')??''));
+    dispatch(setPrice(parseFloat(sessionStorage.getItem('price') ?? '0')));
+
+    dispatch(setImage(sessionStorage.getItem('image')??''));
+    dispatch(setRate(parseFloat(sessionStorage.getItem('rate') ?? '0')));
+    dispatch(setCount(parseFloat(sessionStorage.getItem('count') ?? '0')))
+    dispatch(setCategory(sessionStorage.getItem('category')??''))
+  
+  
+ 
+  }, [])
+  
   return (
     <div className=" lg:mt-10 md:mt-5 sm:mt-1 h-[calc(100vh-15vh)]  ">
       <p className="grid place-items-center  sm:text-sm md:text-2xl lg:text-3xl">ProductDetails</p>

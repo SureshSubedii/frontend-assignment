@@ -7,26 +7,26 @@ import Home from './Components/Home'
 import ProductDetails from './Components/ProductDetails'
 import Products from './Components/Products'
 
-function App():JSX.Element {
+function App(): JSX.Element {
   document.body.style.backgroundColor = 'rgb(238, 230, 230)';
 
 
   return (
 
-  <BrowserRouter>
-  <div className="app">
-  <Headers/>
-  <Home/>
-  <Routes>
-    <Route path='/dashboard' element={<Dashboard/>}/>
-    <Route path='/' element={<Products/>}/>
-    <Route path='cart' element={<Cart/>}/>
-    <Route path='productDetails' element={<ProductDetails/>}/>
+    <BrowserRouter>
+      <div className="app">
+        <Headers />
+        <Home />
+        <Routes>
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/' element={<Products />} />
+          <Route path='cart' element={<Cart />} />
+          <Route path='productDetails' element={<ProductDetails />} />
 
-  </Routes>
-  
-</div>
-</BrowserRouter>
+        </Routes>
+
+      </div>
+    </BrowserRouter>
   )
 }
 

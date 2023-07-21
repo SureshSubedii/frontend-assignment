@@ -4,8 +4,11 @@ import axios from 'axios';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { setCategory, setCount, setDescription, setImage, setPrice, setRate, setTitle } from '../StateManagement/ProductSlice';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { setTitle } from '../StateManagement/ProductSlice';
 import Spinner from './Spinner';
+
 
 // Defining the type for product object
 type Product = {
@@ -30,18 +33,31 @@ const Products = (): JSX.Element => {
 
   const handleClick = (title: string, description: string, price: number, image: string, rate: number, count: number, category: string) => {
     //Dispatching to update the redux store
-    dispatch(setTitle(title));
-    dispatch(setDescription(description));
-    dispatch(setPrice(price));
-    dispatch(setImage(image));
-    dispatch(setRate(rate));
-    dispatch(setCount(count))
-    dispatch(setCategory(category))
+ 
+    sessionStorage.setItem('title',title)
+    sessionStorage.setItem('description',description)
+    sessionStorage.setItem("price",price.toString())
+    sessionStorage.setItem('title',title)
+    sessionStorage.setItem('image',image)
+    sessionStorage.setItem('rate',rate.toString())
+    sessionStorage.setItem('count',count.toString())
+    sessionStorage.setItem('category',category)
+
+    dispatch(setTitle(sessionStorage.getItem('title')??''))
+    
+
+
+
+
 
 
     navigate('/productDetails');
   };
 
+  const handleAddToCart=()=>{
+    toast.success('Added to the cart!')
+      
+  }
   const fetchData = async () => {
     try {
       const response = await axios.get<Product[]>('https://fakestoreapi.com/products');
@@ -96,7 +112,7 @@ const Products = (): JSX.Element => {
                   className="bg-orange-400 m-1 text-white font-bold rounded hover:bg-orange-300 sm:text-xs md:text-sm p-1 lg:text-xl"
                   onClick={(e) => {
                     e.stopPropagation()
-                    console.log("CArt")
+                    handleAddToCart()
                   }}
 
                 >
