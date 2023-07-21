@@ -2,7 +2,7 @@
 - React + Vite
 - TypeScript
 - Tailwind CSS
-- Materiaal UI components and Ions
+- Material UI components and Ions
 - TanStack Query
 - React Redux 
 
