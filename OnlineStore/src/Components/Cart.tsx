@@ -60,7 +60,7 @@ function Cart(): JSX.Element {
                 </h2>
                 <h3 className="text-red-600 mt-auto sm:text-xs lg:text-2xl">{item.price}$</h3>
 
-                <div className="p-1 flex w-full justify-evenly ">
+                <div className="p-1 flex w-full md:justify-between sm:justify-evenly ">
                   <button className=" bg-orange-400 px-2" onClick={()=>decreaseCount(index)}>-</button>
                   {count[index]}
                   <button className=" bg-orange-400 px-2" onClick={()=>increaseCount(index)}>+</button>
