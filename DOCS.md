@@ -1,7 +1,10 @@
 # Technologies used
 - React + Vite
 - TypeScript
-- Tailwind Css
+- Tailwind CSS
+- Materiaal UI components and Ions
+- TanStack Query
+- React Redux 
 
 # Starting the Application
 - Go to the root folder, then open the terminal
