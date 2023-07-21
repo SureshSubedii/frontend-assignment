@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Navigation(): JSX.Element {
   const navigate=useNavigate();
   return (
-    <div className="bg-gradient-to-b from-gray-700 to-gray-500 text-white flex justify-evenly font-bold  sticky top-0 py-2">
+    <div className="bg-gradient-to-b from-gray-700 to-gray-500 text-white flex justify-evenly font-bold  w-full py-2">
      
       <p className="sidebar-items " onClick={()=>navigate("/")}><FlutterDashIcon/> 
       <span>Dashboard</span>

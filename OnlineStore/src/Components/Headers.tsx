@@ -15,7 +15,7 @@ function Headers(): JSX.Element {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-red-700 to-blue-900 text-white flex sticky  top-0 px-3 py-4 items-center  sm:py-1">
+    <div className="bg-gradient-to-r from-red-700 to-blue-900 text-white flex  w-100 px-3 py-4 items-center  sm:py-1">
       <h1 className="text-3xl font-bold sm:text-sm  md:text-3xl lg:text-5xl">Online Store</h1>
 
       <h2 className="text-3xl font-bold sm:text-sm md:text-3xl lg:text-5xl  mx-auto">
