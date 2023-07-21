@@ -1,7 +1,34 @@
-
-function ProductDetails():JSX.Element {
+import Box from '@mui/material/Box';
+import Rating from '@mui/material/Rating';
+import { useSelector } from 'react-redux';
+import { selectCategory, selectCount, selectDescription, selectImage, selectPrice, selectRate, selectTitle } from '../StateManagement/ProductSlice';
+function ProductDetails(): JSX.Element {
+  const title = useSelector(selectTitle)
+  const image = useSelector(selectImage);
+  const description = useSelector(selectDescription)
+  const category = useSelector(selectCategory);
+  const price = useSelector(selectPrice)
+  const rate = useSelector(selectRate);
+  const count = useSelector(selectCount);
   return (
-    <div>ProductDetails</div>
+    <div className=" lg:mt-10 md:mt-5 sm:mt-1 h-[calc(100vh-15vh)]  ">
+      <p className="grid place-items-center  sm:text-sm md:text-2xl lg:text-3xl">ProductDetails</p>
+      <div className="flex-column mx-auto rounded-2xl w-[calc(100vw-40vw)]  sm:w-full lg:w-[calc(100vw-40vw)] h-[calc(100vh-23vh)] overflow-y-scroll p-3 m-3 bg-white ">
+        <img src={image} className=' mx-auto h-[calc(100vh-80vh)]  object-contain' />
+        <p className='lg:text-5xl  md:text-xl sm:text-sm font-bold mt-3 text-blue-400'>{title}</p>
+        <p className='font-bold mt-3 text-2xl'>${price}</p>
+        <p className='mt-5  sm:text-sm md:text-2xl lg:text-2xl'> {description}</p>
+        <p className='sm:text-sm md:text-2xl  mt-4 '> <strong> Category:</strong> {category}</p>
+        <Box component="fieldset" mb={3} borderColor="transparent" className='flex items-center '>
+          <strong className='sm:text-sm md:text-2xl'>Ratings:</strong>
+          <Rating name="read-only" value={rate} readOnly />
+          <p > {rate} </p>
+          <p>{'('}{count}{')'}</p>
+        </Box>
+
+      </div>
+
+    </div>
   )
 }
 
