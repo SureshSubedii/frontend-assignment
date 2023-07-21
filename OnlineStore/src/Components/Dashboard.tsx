@@ -4,7 +4,7 @@ function Dashboard(): JSX.Element {
   const navigate = useNavigate();
 
   return (
-    <div className="flex flex-col justify-between min-h-[calc(100vh-10vh)]">
+    <div className="flex flex-col justify-between min-h-[calc(100vh-11vh)]">
       <div className="m-5 rounded-lg bg-gray-300 p-4">
         <h1 className="lg:text-5xl sm:text-3xl">
           Discover the Ultimate Online Shopping Experience at Our Online Store!

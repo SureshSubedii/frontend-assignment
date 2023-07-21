@@ -9,7 +9,7 @@ interface ProductState {
   image: string;
   rate: number;
   count: number;
-  category:string
+  category: string
 }
 
 const initialState: ProductState = {
@@ -20,7 +20,7 @@ const initialState: ProductState = {
   image: "",
   rate: 0,
   count: 0,
-  category:''
+  category: ''
 };
 
 const productSlice = createSlice({
